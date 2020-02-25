@@ -1,379 +1,253 @@
-\documentclass [xcolor=svgnames, t] {beamer} 
-\usepackage[utf8]{inputenc}
-\usepackage{booktabs, comment} 
-\usepackage[absolute, overlay]{textpos} 
-\useoutertheme{infolines} 
-\setbeamercolor{title in head/foot}{bg=internationalorange}
-\setbeamercolor{author in head/foot}{bg=dodgerblue}
-\usepackage{csquotes}
-\usepackage[style=verbose-ibid,backend=bibtex]{biblatex}
-\bibliography{bibfile}
-
-\usepackage{amsmath}
-\usepackage[makeroom]{cancel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% Copyright @ Lu Niu
+% School of Physics, University of Sydney
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\usepackage{textpos}
 
-\usepackage{tikz}
+%	PACKAGES AND THEMES
 
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
 \usetheme{Madrid}
-\definecolor{myuniversity}{RGB}{0, 60, 113}
-\definecolor{internationalorange}{RGB}{231, 93,  42}
- 	\definecolor{dodgerblue}{RGB}{0, 119,202}
-\usecolortheme[named=myuniversity]{structure}
-\usepackage{tikz}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
 
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
 
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
 
-\title[Turbulence Modeling (Group Project)]{Turbulence Modeling using OpenFOAM}
-\subtitle{(Introduction to Turbulence - ENGR5005G)}
-\institute[]{Mechanical Engineering \\Ontario Tech University }
-\titlegraphic{\includegraphics[height=2.5cm]{ontario.png}}
-\author[Arup Jyoti Chutia]{
-	Arup Jyoti Chutia ,
-	Brayden York and
-	Marcus Ebert }
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
-
-\institute[]{Mechanical Engineering \\Ontario Tech University }
-\date{\today}
-
-
-\addtobeamertemplate{navigation symbols}{}{%
-    \usebeamerfont{footline}%
-    \usebeamercolor[fg]{footline}%
-    \hspace{1em}%
-    \insertframenumber/\inserttotalframenumber
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Short title]{Full Title of the Talk} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{John Smith} % Your name
+\institute[UCLA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of California \\ % Your institution for the title page
+\medskip
+\textit{john@smith.com} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
 
 \begin{document}
+
 \begin{frame}
- \titlepage   
+\titlepage % Print the title page as the first slide
 \end{frame}
 
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
 
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
 
+%------------------------------------------------
+\section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\logo{\includegraphics[scale=0.2]{ontario.png}~%
+\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\begin{frame}
+\frametitle{Paragraphs of Text}
+Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
+
+Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Bullet Points}
+\begin{itemize}
+\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
+\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
+\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
+\item Nam cursus est eget velit posuere pellentesque
+\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Blocks of Highlighted Text}
+\begin{block}{Block 1}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+\end{block}
+
+\begin{block}{Block 2}
+Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
+\end{block}
+
+\begin{block}{Block 3}
+Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Multiple Columns}
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.45\textwidth} % Left column and width
+\textbf{Heading}
+\begin{enumerate}
+\item Statement
+\item Explanation
+\item Example
+\end{enumerate}
+
+\column{.5\textwidth} % Right column and width
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\section{Second Section}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Table}
+\begin{table}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\caption{Table caption}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Theorem}
+\begin{theorem}[Mass--energy equivalence]
+$E = mc^2$
+\end{theorem}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+\frametitle{Verbatim}
+\begin{example}[Theorem Slide Code]
+\begin{verbatim}
+\begin{frame}
+\frametitle{Theorem}
+\begin{theorem}[Mass--energy equivalence]
+$E = mc^2$
+\end{theorem}
+\end{frame}\end{verbatim}
+\end{example}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Figure}
+Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
+%\begin{figure}
+%\includegraphics[width=0.8\linewidth]{test}
+%\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+\frametitle{Citation}
+An example of the \verb|\cite| command to cite within the presentation:\\~
+
+This statement requires citation \cite{p1}.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{References}
+\footnotesize{
+\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+\bibitem[Smith, 2012]{p1} John Smith (2012)
+\newblock Title of the publication
+\newblock \emph{Journal Name} 12(3), 45 -- 678.
+\end{thebibliography}
 }
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\begin{frame}{Outline}
-\vspace{1cm}
-\begin{center}
-   \begin{itemize}
-     \item Introduction
-     \item Objectives
-     \item Governing equations
-     \item OpenFOAM solvers
-     \item Geometry and problem parameters
-     \item Mesh and boundary conditions
-     \item Results
-     \item Conclusions and recommendations
-     \item References
- \end{itemize} 
-\end{center}
- 
 \end{frame}
 
+%------------------------------------------------
 
-\begin{frame}{Introduction }
-Turbulent flow 
- \begin{center}
-    
-
-\begin{columns}[onlytextwidth]
-\column{0.5\textwidth}
-\begin{itemize}
-\item Chaotic changes in field values :
-\begin{itemize}
-    \item velocity
-    \item pressure
-\end{itemize}
-\item High Reynolds number flow :
-\vspace{2.5mm}
-\begin{itemize}
-    \item low momentum diffusion ($\mu$)
-    \item high momentum convection  
-\end{itemize}
-
-%\item Mathematical models !
-
-
-
-
-\end{itemize}
-
-
-
-\column{0.5\textwidth}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{turb.jpg}
-    \caption{1. Flow visualisation (source: www.bronkhorst.com).}
-  %  \label{fig:my_label}
-\end{figure}
-
-\end{columns}
-
-\end{center}
-
-  
+\begin{frame}
+\Huge{\centerline{The End}}
 \end{frame}
 
-\begin{frame}{Introduction (contd...)}
-\begin{center}
-    
+%----------------------------------------------------------------------------------------
 
-\begin{columns}[onlytextwidth]
-\column{0.5\textwidth}
-%\vspace{1 cm}
-Why turbulence modeling?\\
-\vspace{1cm}
-\begin{itemize}
-
-\item  No general analytical theory
-\item  Chaotic flow 
-\item  Closure Problem
-
-\item Mathematical models.
-
-\end{itemize}
-\column{0.5\textwidth}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{vel.png}
-    \caption{2.(a)Laminar and (b) turbulent velocity (source: https://nptel.ac.in).}
-  %  \label{fig:my_label}
-\end{figure}
-\end{columns}
-
-\end{center}
-
-
-
-\end{frame}
-
-
-
-\begin{frame}{Objectives}
- \vspace{1.5cm}   
-\begin{itemize}
-    \item Understanding turbulence models in CFD (OpenFOAM).
-    \item Simulations for transient and steady state conditions.
-    \item Selecting  turbulence model.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Governing equations (Mean flow)\autocite{Lecture3}}
-  
- \textit{\textbf{RANS} equations for incompressible flow}:\\
-  \textbf{Continuity equation}
-  
-     \begin{equation}
-      \frac{\partial \overline{u_{i}}}{\partial x_{i}}=0
-  \end{equation} 
-  
- 
-  
-  
-  \textbf{Momentum equations }
-  \begin{equation}
-      \frac{\partial \overline{u_{i}} }{\partial t} + \overline{u_{j}} \frac{\partial \overline{u_{i}} }{\partial x_{j}} = -\frac{1}{\rho}\frac{\partial \overline{P}}{\partial x_{i}}+\nu\frac{\partial ^2\overline{u_{i}}}{\partial x_{j}\partial x_{j}}-\frac{\partial \overline{u_{i}'u_{j}'}}{\partial x_{j}}+\overline{g_{i}}
-  \end{equation}
-  
-   \textbf{Scaler equation }
-  \begin{equation}
-     \frac{\partial \overline{\phi}}{\partial t}+\overline{u_{i}}\frac{\partial \overline{\phi}}{\partial x_{i}}=\frac{\partial}{\partial x_{i}}(D\frac{\partial \overline{\phi}}{\partial x_{i}})-\frac{\partial (\overline{{u_{i}^{'}\phi^{'}}})}{\partial x_{i}}
-  \end{equation}
-  
-  
-\end{frame}
-
-
-\begin{frame}{Standard \textit{k-$\epsilon$} model\autocite{versteeg2007introduction}}
-
-$\nu_{eff}=\nu+\nu_{t},\,\, \nu_{t}=?$
-\begin{itemize}
-    
-
-\item k-turbulent kinetic energy
-
-\begin{equation}
-   k= \frac{1}{2}(\overline{u'^2}+\overline{v'^2}+\overline{w'^2})
-\end{equation}
-\item $\epsilon$ -turbulent dissipation
-  \begin{itemize}
-    \item rate of dissipation of $k$.
-\end{itemize} 
-\item Turbulent viscosity
-\begin{itemize}
-    \item  $\nu_{t}=0.09\frac{k^2}{\epsilon}$ 
-\end{itemize}
-\item Transport equations for $k$ and $\epsilon$
- \end{itemize}   
-\end{frame}
-
-
-
-
-
-\begin{frame}{OpenFOAM solvers }
-   OpenFOAM solvers used in this project
-   \vspace{1cm}
-   \begin{itemize}
-       \item \textbf{simpleFoam\autocite{chapter6}}: for steady state simulation.
-       \begin{itemize}
-           \item RAS models: \textit{kEpsilon, kOmega} and \textit{LRR}.
-       \end{itemize}
-       \item \textbf{pisoFoam\autocite{chapter7}}:  transient simulation for incompressible flow.
-       \begin{itemize}
-          
-           \item LES models : \textit{Smagorinsky,
-          kEqn}.
-          \item RAS model: \textit{kEpsilon}
-     
-       \end{itemize}
-   \end{itemize}
-   
-\end{frame}
-
-\begin{frame}{Geometry and problem parameters } 
-   %\textbf{Geometry and problem parameters }
-   \begin{figure}
-       \centering
-       \includegraphics[width=0.9\textwidth]{pitz.PNG}
-       \caption{3.Schematic of geometry used for simulations (source: http://training.uhem.itu.edu.tr). }
-       %\label{fig:my_label}
-   \end{figure}
-   
-   
-\end{frame}
-
-\begin{frame}{ Mesh and boundary conditions}
-   \begin{figure}
-       \centering
-       \includegraphics[width=0.9\textwidth]{mesh.png}
-       \caption{4.Hexahedral mesh (source:www.cfdsupport.com).}
-      % \label{fig:my_label}
-   \end{figure} 
-   
-  Velocity  boundary conditions
-   \begin{itemize}
-       \item \textit{Inlet}: Dirichlet
-condition.
-       \item \textit{Outlet}: Zero-gradient condition.
-      \item  \textit{Upper Wall}: No slip .
-       \item \textit{Bottom Wall}: No slip.
-      % \item \textit{Side Walls}: No slip.
-   \end{itemize}
-   
-\end{frame}
-
-\begin{frame}{Turbulence – Steady State: Results}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.65\textwidth]{steady_velocity.png}
-    \caption{5.Velocity magnitude for \textit{kEpsilon, kOmega} \,\,and \text{LRR} models.}
-   % \label{fig:my_label}
-\end{figure}
-    
-\end{frame}
-
-\begin{frame}{Turbulence – Steady State: Results(contd...)}
-
-\begin{figure}
-    \centering
-   \includegraphics[width=0.65\textwidth]{steady_nut.png}
-    \caption{6.Turbulent viscosity for \textit{kEpsilon, kOmega}  \,\, and \text{LRR} models.}
-   %\label{fig:my_label}
-\end{figure}
-    
-\end{frame}
-
-
-\begin{frame}{Turbulence - Transient : Results (Smargorinsky model)}
- \begin{figure}
-    \centering
-    \includegraphics[width=0.62\textwidth]{smagorinsky_velocity.png}
-    \caption{7.Smargorinsky velocity magnitude at different time steps.}
-   % \label{fig:my_label}
-\end{figure}
-       
-\end{frame}
-
-\begin{frame}{Turbulence - Transient : Results (Smargorinsky model)}
- \begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{FlowField.png}
-    \caption{8.Streamlines at 0.2s for Smargorinsky model.}
-   % \label{fig:my_label}
-\end{figure}
-       
-\end{frame}
-
-
-
-\begin{frame}{Turbulence - Transient : Results (kEpsilon)}
-    
-    \begin{figure}
-    \centering
-    \includegraphics[width=0.62\textwidth]{kEpsilon_velocity.png}
-    \caption{9.\textit{kEpsilon} model - Velocity magnitude at different
-time steps
-
-.}
-    \label{fig:my_label}
-\end{figure}
-    
-\end{frame}
-
-\begin{frame}{Turbulence - Transient : Results (contd...)}
-    
-    \begin{figure}
-    \centering
-    \includegraphics[width=0.65\textwidth]{transient_velocity_02.png}
-    \caption{10.Velocity vectors for different turbulence models - at
-0.2s}
-  %  \label{fig:my_label}
-\end{figure}
-    
-\end{frame}
-
-\begin{frame}{Turbulence - Transient : Results (contd...)}
-    
-    \begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{nutturb.png}
-    \caption{11.Turbulent viscosity for different turbulence models - at
-0.2s}
-  %  \label{fig:my_label}
-\end{figure}
-    
-\end{frame}
-
-\begin{frame}{Conclusions and Recommendations}
-\textbf{Steady State Simulations}
-\begin{itemize}
-    \item Similar results for  \textit{kEpsilon, kOmega}\,\,and \textit{LRR}.
-    
-\end{itemize}
-\textbf{Transient Simulations}
-\begin{itemize}
-    \item LES -(\textit{Smagorinsky, kEqn)} detail, fluctuation based.
-    \item RAS -(\textit{kEpsilon}), averaging nature.
-\end{itemize}
-    
-\end{frame}
-\begin{frame}{References}
-   \printbibliography
-\end{frame}
-
-\end{document}
+\end{document} 
