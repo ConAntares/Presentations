@@ -308,6 +308,12 @@ INPUT /usr/share/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT /home/lu/Projects/Presentations/202002/F1.png
+INPUT /home/lu/Projects/Presentations/202002/F1.png
+INPUT /home/lu/Projects/Presentations/202002/F1.png
+INPUT /home/lu/Projects/Presentations/202002/F2.png
+INPUT /home/lu/Projects/Presentations/202002/F2.png
+INPUT /home/lu/Projects/Presentations/202002/F2.png
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss17.tfm
 OUTPUT /home/lu/Projects/Presentations/202002/Nano.nav
 OUTPUT /home/lu/Projects/Presentations/202002/Nano.toc
